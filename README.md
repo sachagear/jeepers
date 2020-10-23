@@ -5,7 +5,6 @@
 make sure kubectl, minikube & docker is installed
 ```
 minikube start
-
 minikube status
 
 kubectl create namespace dev
@@ -18,6 +17,9 @@ make the service accessible `minikube service moo -n dev`
 ```
 kubectl scale moo -n dev --replicas=4
 
+
+Other methods to deploy
+```
 kubectl apply -f nodeapp/deploy.yml
 kubectl apply -f nodeapp/service.yml
 

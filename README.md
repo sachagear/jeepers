@@ -16,7 +16,7 @@ make the service accessible `minikube service moo -n dev`
 =======> `curl ip_address:port`
 ```
 kubectl scale moo -n dev --replicas=4
-
+```
 
 Other methods to deploy
 ```

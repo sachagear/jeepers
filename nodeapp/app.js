@@ -1,6 +1,6 @@
 const http = require('http');
 const { networkInterfaces } = require('os');
-let obj = {};
+
 
 const interface = networkInterfaces();
 let port = 80;
@@ -20,7 +20,6 @@ const listener = function (req, res) {
      res.setHeader("Content-Type", "application/json");
      res.writeHead(200);
      res.end(`pod-${address} --  {"message": "This is a JSON response"}    ${ new Date()}  `);
-     console.log(req);
 };
 
 

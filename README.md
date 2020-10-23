@@ -4,6 +4,23 @@
 
 make sure kubectl, minikube & docker is installed
 ```
+install minikube https://minikube.sigs.k8s.io/docs/start/
+install docker  https://docs.docker.com/docker-for-mac/install/
+install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl/
+```
+
+The docker image is built and exists at `https://hub.docker.com/r/smontes/sergeapp`
+
+`docker pull smontes/sergeapp` will grab you the latest image, or you can rebuild the image
+```
+cd nodeapp && docker build --no-cache -t sergeapp.
+docker tag IMAGE_ID smontes/sergeapp
+docker push smontes/sergeapp
+```
+then deploy
+
+
+```
 minikube start
 minikube status
 

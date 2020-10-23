@@ -19,8 +19,8 @@ minikube service moo -n dev
 
 kubectl scale moo -n dev --replicas=4
 
-kubectl apply -f deploy.yml
-kubectl apply -f service.yml
+kubectl apply -f nodeapp/deploy.yml
+kubectl apply -f nodeapp/service.yml
 
-kubectl delete -f deploy.yml
-kubectl delete -f service.yml
+kubectl delete -f nodeapp/deploy.yml
+kubectl delete -f nodeapp/service.yml

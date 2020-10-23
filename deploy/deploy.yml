@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: moo
+  labels:
+    app: batman
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: moo
+  template:
+    metadata:
+      labels:
+        app: moo
+    spec:
+      containers:
+        - name: moo
+          image: smontes/sergeapp
+          ports:
+            - containerPort: 80

@@ -5,12 +5,22 @@ make sure kubectl, minikube & docker is installed
 
 minikube start
 
-kubectl create namespace moo
+minikube status
 
-kubectl create deploy moo --image=smontes/sergeapp
+kubectl create namespace dev
 
-kubectl expose deployment moo --type=LoadBalancer --port=80
+kubectl create deploy moo --image=smontes/sergeapp -n dev
 
-minikube service moo
+kubectl expose deploy moo --type=LoadBalancer --port=80 -n dev
+
+minikube service moo -n dev
 
 =======> curl ip_address:port
+
+kubectl scale moo -n dev --replicas=4
+
+kubectl apply -f deploy.yml
+kubectl apply -f service.yml
+
+kubectl delete -f deploy.yml
+kubectl delete -f service.yml
